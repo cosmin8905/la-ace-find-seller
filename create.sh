@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud config set project find-serller-app-dev
+gcloud config set project playground-s-11-f60a6d
 
 # Build common service first.
 cd common/build
