@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud config set project playground-s-11-f60a6d
+gcloud config set project playground-s-11-704e15
 
 # Build common service first.
 cd common/build
@@ -26,8 +26,11 @@ bash bigquery.sh
 
 
 # Setup and deploy the product service.
+#Service account user + Kubernetes cluster  + Docker image create
 cd ../../products/cloud
 bash setup.sh
+
+: <<'END'
 cd ../deploy
 bash deploy.sh
 
@@ -63,3 +66,7 @@ while true; do
     esac
 done
 
+
+comments' here
+and here
+END

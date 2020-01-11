@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The name of the project to deploy services into.
-PROJECT_NAME="playground-s-11-f60a6d"
+PROJECT_NAME="playground-s-11-704e15"
 
 # Which default region should regional services use?
 PROJECT_REGION="us-central1"
@@ -22,39 +22,39 @@ ORGANIZATION="find-seller"
 # This is the Storage bucket used for public assets. 
 # The entire bucket is public by default
 # Must be unique
-PUBLIC_ASSETS="playground-s-11-f60a6d-public-bucket"
+PUBLIC_ASSETS="playground-s-11-704e15-public-bucket"
 
 # This is the Storage bucket used for private assets. 
 # The entire bucket is private by default
 # Must be unique
-PRIVATE_ASSETS="playground-s-11-f60a6d-private-bucket"
+PRIVATE_ASSETS="playground-s-11-704e15-private-bucket"
 
 # The name of the Pubsub topic to create / use
-PUB_SUB_TOPIC="playground-s-11-f60a6d-items"
+PUB_SUB_TOPIC="playground-s-11-704e15-items"
 
 # The name of the custom network for the product and ads services
-SERVICES_NETWORK="playground-s-11-f60a6d-app-network"
+SERVICES_NETWORK="playground-s-11-704e15-app-network"
 
 # The name of the product service subnet
-PRODUCT_SUBNET="playground-s-11-f60a6d-prod-app-network-subnet"
+PRODUCT_SUBNET="playground-s-11-704e15-prod-app-network-subnet"
 
 # The name of the product service subnet
-ADS_SUBNET="playground-s-11-f60a6d-ad-app-network-subnet"
+ADS_SUBNET="playground-s-11-704e15-ad-app-network-subnet"
 
 # The name of the Kubernetes cluster used for the products service
-PRODUCT_CLUSTER_NAME="playground-s-11-f60a6d-app-clusters"
+PRODUCT_CLUSTER_NAME="playground-s-11-704e15-app-clusters"
 
 # The name of the spanner instance
-PRODUCT_DB_INSTANCE_NAME="playground-s-11-f60a6d-app-spanner-instance"
+PRODUCT_DB_INSTANCE_NAME="playground-s-11-704e15-app-spanner-instance"
 
 # The name of the spanner db
-PRODUCT_DB_NAME="playground-s-11-f60a6d-app-spanner-db"
+PRODUCT_DB_NAME="playground-s-11-704e15-app-spanner-db"
 
 # The service account to use to launch the compute engine instances.
 COMPUTE_ENGINE_SERVICE_ACCOUNT=$(gcloud iam service-accounts list --filter='displayName:"Compute Engine default service account"' --format='value(email)')
 
 # The cloud function name
-FUNCTION_NAME="playground-s-11-f60a6d-upload"
+FUNCTION_NAME="playground-s-11-704e15-upload"
 
 # Bigtable settings...
 # The name of our Bigtable instance. An instance is basically a container for our cluster.
