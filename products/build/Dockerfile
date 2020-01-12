@@ -1,12 +1,15 @@
 # This is a multi-stage build. The first stage builds the app.
 # The second stage copies the binary and adds it to a lightweight alpine container.
-FROM golang:1.9
+FROM golang:1.13
 
 WORKDIR /go/src/github.com/linuxacademy/products
 # Copy the application code to the working dir.
 # For this to work the docker build command needs to set the context to the parent of the app dir.
 COPY ./app .
 # Install the dependencies
+
+#RUN go get google.golang.org/api/option
+#"google.golang.org/api/credentials_go19.go"
 RUN go get .
 # Build for Linux. Save in the tmp dir 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /tmp/app .

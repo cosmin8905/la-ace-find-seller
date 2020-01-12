@@ -28,7 +28,7 @@ gcloud iam service-accounts create \
     --display-name $SERVICE_ACCOUNT_NAME
 
 SA_EMAIL=$(gcloud iam service-accounts list \
-    --filter="displayName:$SERVICE_ACCOUNT_NAME" \
+    --filter="displayName:product-service" \
     --format='value(email)')
 
 gcloud projects add-iam-policy-binding $PROJECT_NAME \
@@ -68,8 +68,7 @@ gcloud beta container clusters create $PRODUCT_CLUSTER_NAME \
     --disk-type "pd-standard" \
     --disk-size "100" \
     --num-nodes "3" \
-    --enable-cloud-logging \
-    --enable-cloud-monitoring \
+    --enable-stackdriver-kubernetes \
     --network $SERVICES_NETWORK \
     --subnetwork $PRODUCT_SUBNET \
     --addons HorizontalPodAutoscaling,HttpLoadBalancing\

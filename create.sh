@@ -1,12 +1,12 @@
 #!/bin/bash
 
-gcloud config set project playground-s-11-704e15
+gcloud config set project playground-s-11-fe84c5
 
 # Build common service first.
 cd common/build
 
 # Enable the APIs
-bash enableapis.sh
+bash enableapis.sh 
 
 # Create the network used for Kubernetes and Compute Engine.
 bash network.sh
@@ -25,8 +25,9 @@ bash bigtable.sh
 bash bigquery.sh
 
 
-# Setup and deploy the product service.
+# Setup and deploy the product service. 
 #Service account user + Kubernetes cluster  + Docker image create
+
 cd ../../products/cloud
 bash setup.sh
 
