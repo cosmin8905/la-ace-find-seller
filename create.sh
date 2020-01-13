@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud config set project playground-s-11-1f2906
+gcloud config set project playground-s-11-f2c387
 
 # Build common service first.
 cd common/build
@@ -31,11 +31,11 @@ bash bigquery.sh
 cd ../../products/cloud
 bash setup.sh
 
-: <<'END'
+
 cd ../deploy
 bash deploy.sh
 
-
+: <<'END'
 # Setup the ads
 cd ../../ads/cloud
 bash setup.sh
