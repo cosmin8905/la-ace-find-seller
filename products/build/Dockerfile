@@ -9,7 +9,9 @@ COPY ./app .
 # Install the dependencies
 
 #RUN go get google.golang.org/api/option
-#"google.golang.org/api/credentials_go19.go"
+
+#Problems with golang option
+#https://stackoverflow.com/questions/59705647/docker-build-failing-google-golang-org-api-option
 RUN go get .
 # Build for Linux. Save in the tmp dir 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /tmp/app .

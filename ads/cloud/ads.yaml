@@ -10,15 +10,15 @@ resources:
     region: us-central1
     zone: us-central1-b
     prefix: ads-service
-    privateBucket: fs2-private-bucket
-    publicBucket: fs2-public-bucket
-    spannerDatabase: fs2-app-spanner-db
-    spannerInstance: fs2-app-spanner-instance
-    network: fs2-app-network
-    subnet: fs2-ad-app-network-subnet
-    projectID: ace-demo-2
+    privateBucket: playground-s-11-fe84c5-private-bucket
+    publicBucket: playground-s-11-fe84c5-public-bucket
+    spannerDatabase: playground-s-11-app-spanner-db
+    spannerInstance: playground-s-11-app-spanner-instance
+    network: playground-s-11-fe84c5-app-network
+    subnet: playground-s-11-fe84c5-ad-app-network-subnet
+    projectID: playground-s-11-fe84c5
     adBinName: app
-    serviceAccount: 53612557816-compute@developer.gserviceaccount.com
+    serviceAccount: 887222626747-compute@developer.gserviceaccount.com
 
 
 - name: ads-deployment-autoscaler
@@ -26,8 +26,8 @@ resources:
   properties:
     zone: us-central1-b
     prefix: ads-service
-    privateBucket: fs2-private-bucket
-    projectID: ace-demo-2
+    privateBucket: playground-s-11-fe84c5-private-bucket
+    projectID: playground-s-11-fe84c5
     adBinName: app
     size: 1
     maxSize: 2
@@ -36,5 +36,5 @@ resources:
   type: loadbalancer.jinja
   properties:
     prefix: ads-service
-    network: fs2-app-network
-    projectID: ace-demo-2
+    network: playground-s-11-fe84c5-app-network
+    projectID: playground-s-11-fe84c5
