@@ -17,5 +17,6 @@ handlers:
   script: _go_app
   login: required
 
+  #please copy the var from project_settings" PUB_SUB_TOPIC
 env_variables:
   APP_TOPIC: 'fs2-items'
