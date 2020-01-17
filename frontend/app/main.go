@@ -7,7 +7,6 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
-
 	"github.com/labstack/echo"
 
 	"google.golang.org/appengine"

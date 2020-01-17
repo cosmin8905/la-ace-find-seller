@@ -9,3 +9,4 @@ export GOPATH="$(dirname $PWD)/vendor"
 bash ../build/build.sh
 
 GOPATH="$(dirname "$PWD")/vendor" gcloud app deploy ../app/app.yaml -q
+echo $GOPATH

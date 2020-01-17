@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud config set project playground-s-11-f2c387
+gcloud config set project playground-s-11-f9c98e
 
 # Build common service first.
 cd common/build
@@ -27,15 +27,13 @@ bash bigquery.sh
 
 # Setup and deploy the product service. 
 #Service account user + Kubernetes cluster  + Docker image create
-
 cd ../../products/cloud
 bash setup.sh
-
 
 cd ../deploy
 bash deploy.sh
 
-: <<'END'
+
 # Setup the ads
 cd ../../ads/cloud
 bash setup.sh
@@ -48,16 +46,20 @@ bash deploy.sh
 
 
 # Setup the front-end app
+# Remember to copy  APP_TOPIC: in the app.yaml from project settings PUB_SUB_TOPIC var
+
 cd ../../frontend/cloud
 bash setup.sh
 
-source common/project_settings.sh
 
+: <<'END'
+source common/project_settings.sh
 echo "Have you setup the urls and environment variables for the frontend app?"
 echo "Set the APP_TOPIC environment variable to $PUB_SUB_TOPIC"
+echo "Path to app.yaml file = la-ace-find-seller/frontend/app/app.yaml"
 echo "Set the host on line 5 in the items.js file to http://$(kubectl get svc -o jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}')/"
 echo "Set the host on line 8 in the items.js file to http://$(gcloud compute forwarding-rules list --filter='name:"ads-service-forwarding-rules"' --format='value(IPAddress)')/"
-
+echo "Path to items.js file = la-ace-find-seller/frontend/app/public/assets/js/items.js"
 while true; do
     read -p "Are you ready to continue? (Y or N): " yn
     case $yn in
@@ -68,6 +70,4 @@ while true; do
 done
 
 
-comments' here
-and here
 END
