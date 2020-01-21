@@ -4,7 +4,7 @@ runtime: go111
 env_variables:
   APP_TOPIC: 'playground-s-11-488719-items'
 
-
+  
 handlers:
 - url: /public
   static_dir: public
@@ -18,4 +18,4 @@ handlers:
 - url: /.*
   script: auto
   #script: _go_app
-  #login: required
+  login: required
