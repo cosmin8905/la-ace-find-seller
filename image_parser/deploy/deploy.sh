@@ -15,4 +15,4 @@ gcloud functions deploy $FUNCTION_NAME \
     --project=$PROJECT_NAME \
     --region=$PROJECT_REGION \
     --set-env-vars=BIGTABLE_INSTANCE_ID=$BIGTABLE_INSTANCE_ID,BIGTABLE_TABLE_ID=$BIGTABLE_TABLE_ID,CLOUD_STORAGE_BUCKET=$PUBLIC_ASSETS \
-    --runtime="nodejs6"
+    --runtime="nodejs8"

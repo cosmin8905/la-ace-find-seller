@@ -12,5 +12,3 @@ go get .
 rm -fr $GOPATH/src/github.com/valyala/fasttemplate/vendor
 
 go get .
-
-

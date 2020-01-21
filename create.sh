@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud config set project playground-s-11-f9c98e
+gcloud config set project playground-s-11-488719
 
 # Build common service first.
 cd common/build
@@ -24,28 +24,28 @@ bash bigtable.sh
 # Create the bigquery table based on the Bigtable schema.
 bash bigquery.sh
 
+echo "!!! Backend components setup completed, starting setup and deploy scripts !!!"
 
-# Setup and deploy the product service. 
+
+echo "!!! Setup and deploy the product service !!!"
 #Service account user + Kubernetes cluster  + Docker image create
 cd ../../products/cloud
 bash setup.sh
-
 cd ../deploy
 bash deploy.sh
 
 
-# Setup the ads
+echo "!!! Setup the ads !!!"
 cd ../../ads/cloud
 bash setup.sh
 bash deploy.sh
 
 
-# Setup the cloud function app that listens to pubsub and handles image processing.
+echo "!!! Setup the cloud function app that listens to pubsub and handles image processing !!!"
 cd ../../image_parser/deploy
 bash deploy.sh
 
-
-# Setup the front-end app
+echo "!!! Setup the front-end app !!!"
 # Remember to copy  APP_TOPIC: in the app.yaml from project settings PUB_SUB_TOPIC var
 
 cd ../../frontend/cloud

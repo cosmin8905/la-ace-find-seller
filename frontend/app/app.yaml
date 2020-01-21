@@ -1,9 +1,11 @@
-runtime: go
-api_version: go1
+runtime: go111
+#api_version: go1
+
+env_variables:
+  APP_TOPIC: 'playground-s-11-488719-items'
+
 
 handlers:
-
-
 - url: /public
   static_dir: public
 
@@ -14,8 +16,6 @@ handlers:
   static_dir: public/assets
 
 - url: /.*
-  script: _go_app
-  login: required
-
-env_variables:
-  APP_TOPIC: 'playground-s-11-f9c98e-items'
+  script: auto
+  #script: _go_app
+  #login: required

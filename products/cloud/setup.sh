@@ -31,7 +31,7 @@ SA_EMAIL=$(gcloud iam service-accounts list \
     --filter="displayName:product-service" \
     --format='value(email)')
 
-sleep 2
+sleep 5
 echo "The service account that will be used is: "$SA_EMAIL
 gcloud projects add-iam-policy-binding $PROJECT_NAME \
     --role roles/bigtable.user \
