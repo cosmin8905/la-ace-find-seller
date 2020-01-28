@@ -1,3 +1,4 @@
+  
 #!/bin/bash
 
 # Import the settings from the common settings file
@@ -7,6 +8,6 @@ export GOPATH="$(dirname $PWD)/vendor"
 
 # Build the code into the vendor dir.
 bash ../build/build.sh
+#GOROOT="$(dirname "$PWD")/vendor"
 
-GOPATH="$(dirname "$PWD"/src)" gcloud app deploy ../app/app.yaml -q
-echo "Current go path = "$GOPATH
+GOPATH="$(dirname "$PWD")/vendor" gcloud app deploy ../app/app.yaml -q

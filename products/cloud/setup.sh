@@ -31,7 +31,7 @@ SA_EMAIL=$(gcloud iam service-accounts list \
     --filter="displayName:product-service" \
     --format='value(email)')
 
-sleep 5
+sleep 5s
 echo "The service account that will be used is: "$SA_EMAIL
 gcloud projects add-iam-policy-binding $PROJECT_NAME \
     --role roles/bigtable.user \
@@ -78,7 +78,7 @@ gcloud beta container clusters create $PRODUCT_CLUSTER_NAME \
     --enable-autorepair \
     --service-account $SA_EMAIL
 
-
+sleep 5s
 ##############################################################################
 #
 # Push the container to the Google Cloud Container Registry.

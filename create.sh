@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud config set project playground-s-11-488719
+gcloud config set project playground-s-11-fcaa8e
 
 # Build common service first.
 cd common/build
@@ -34,6 +34,8 @@ bash setup.sh
 cd ../deploy
 bash deploy.sh
 
+echo "$(kubectl get svc -o jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}')"
+
 
 echo "!!! Setup the ads !!!"
 cd ../../ads/cloud
@@ -46,12 +48,13 @@ cd ../../image_parser/deploy
 bash deploy.sh
 
 echo "!!! Setup the front-end app !!!"
-# Remember to copy  APP_TOPIC: in the app.yaml from project settings PUB_SUB_TOPIC var
 
 cd ../../frontend/cloud
 bash setup.sh
 
 
+
+# Remember to copy  APP_TOPIC: in the app.yaml from project settings PUB_SUB_TOPIC var
 : <<'END'
 source common/project_settings.sh
 echo "Have you setup the urls and environment variables for the frontend app?"
