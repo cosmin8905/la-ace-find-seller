@@ -10,4 +10,4 @@ export GOPATH="$(dirname $PWD)/vendor"
 bash ../build/build.sh
 #GOROOT="$(dirname "$PWD")/vendor"
 
-GOPATH="$(dirname "$PWD")/vendor" gcloud app deploy ../app/app.yaml -q
+GOPATH="$(dirname "$PWD")/vendor" gcloud app deploy $GOPATH/src/github.com/linuxacademy/frontend/app.yaml -q

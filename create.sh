@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud config set project playground-s-11-fcaa8e
+gcloud config set project playground-s-11-c41fe8
 
 # Build common service first.
 cd common/build

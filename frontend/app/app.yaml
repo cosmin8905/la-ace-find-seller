@@ -1,8 +1,7 @@
 runtime: go111
-#api_version: go1
 
 env_variables:
-  APP_TOPIC: 'playground-s-11-fcaa8e-items'
+  APP_TOPIC: 'playground-s-11-c41fe8-items'
 
   
 handlers:

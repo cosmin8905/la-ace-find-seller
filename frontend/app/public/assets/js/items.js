@@ -3,11 +3,11 @@
 
         // The name of the product host. This is pulled from the Kubernetes service.
         //kubectl get svc -o jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}'
-        var productHost = "http://34.67.216.125/";
+        var productHost = "http://34.67.15.40";
 
         // The name of the ads host. This is pulled from the Compute Engine Load Balancer.
         //gcloud compute forwarding-rules list --filter='name:"ads-service-forwarding-rules"' --format='value(IPAddress)'
-        var adHost = "http://34.102.180.189/";
+        var adHost = "http://35.244.230.12/";
 
         var app1 = new Vue({
             delimiters: ['[[', ']]'],
